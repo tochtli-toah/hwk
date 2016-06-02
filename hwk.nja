@@ -1,0 +1,7 @@
+{
+  "venv": "/home/alfredo/Desarrollo/python/ves/ve2/bin/python", 
+  "project-type": "Import from sources", 
+  "name": "hwk", 
+  "license": "GNU General Public License v3", 
+  "description": "Ejemplo Django"
+}
