@@ -19,8 +19,13 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^proyectos/$', views.listaProyectos, name='listaproy'),
+    url(r'^proyecto/$', views.nuevoProyecto, name='nuevoproyecto'),
     url(r'^proyecto/(?P<proyecto_id>[0-9]+)/$', views.detalleProyecto, name='detalleproy'),
-    url(r'^proyecto/(?P<proyecto_id>[0-9]+)/$', views.editaProyecto, name='editaProyecto'),
-    url(r'^tarea/$', views.nuevaTarea, name='nuevaTarea'),
-    url(r'^tarea/(?P<tarea_id>[0-9]+)/$', views.editaTarea, name='nuevaTarea'),
+    url(r'^proyecto/des/(?P<proyecto_id>[0-9]+)/$', views.desactivaProyecto, name='desactivaproy'),
+    url(r'^proyecto/activ/(?P<proyecto_id>[0-9]+)/$', views.activaProyecto, name='activaproy'),
+    url(r'^tarea/$', views.nuevaTarea, name='nuevatarea'),
+    url(r'^tarea/inicia/(?P<tarea_id>[0-9]+)/$', views.iniciaTarea, name='iniciat'),
+    url(r'^tarea/termina/(?P<tarea_id>[0-9]+)/$', views.terminaTarea, name='terminat'),
+    url(r'^tarea/cancela/(?P<tarea_id>[0-9]+)/$', views.cancelaTarea, name='cancelat'),
+    url(r'^contactos/$', views.contactos, name='contactos'),
 ]

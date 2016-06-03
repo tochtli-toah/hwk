@@ -22,10 +22,10 @@ class Tarea(models.Model):
     estatus = models.ForeignKey(Estatus)
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField(max_length=1500)
-    fechainicio = models.DateTimeField(null=True)
-    fechafin = models.DateTimeField(null=True)
+    fechainicio = models.DateTimeField(null=True, blank=True)
+    fechafin = models.DateTimeField(null=True, blank=True)
     fecharegistro = models.DateTimeField(auto_now=True)
-    fechalimite = models.DateTimeField(null=True)
+    fechalimite = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):
         return self.nombre
