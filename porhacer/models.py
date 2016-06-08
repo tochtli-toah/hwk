@@ -24,7 +24,7 @@ class Tarea(models.Model):
     descripcion = models.TextField(max_length=1500)
     fechainicio = models.DateTimeField(null=True, blank=True)
     fechafin = models.DateTimeField(null=True, blank=True)
-    fecharegistro = models.DateTimeField(auto_now=True)
+    fecharegistro = models.DateTimeField(null=False)
     fechalimite = models.DateTimeField(null=True, blank=True)
 
     def __unicode__(self):

@@ -59,6 +59,7 @@ def nuevaTarea(request):
             tt.proyecto = Proyecto.objects.get(pk=request.POST.get('proyecto'))
             tt.estatus = Estatus.objects.get(pk=1)
             tt.nombre = request.POST.get('nombre')
+            tt.fecharegistro = timezone.now()
             tt.descripcion = request.POST.get('descripcion')
             tt.save()
             return redirect('index')
@@ -70,7 +71,7 @@ def iniciaTarea(request, tarea_id):
     tarea = Tarea.objects.get(pk=tarea_id)
     if tarea_id:
         estatus = Estatus.objects.get(pk=2)
-        tarea.status = estatus
+        tarea.estatus = estatus
         tarea.fechainicio = timezone.now()
         tarea.save()
     return redirect('index')
@@ -79,8 +80,8 @@ def terminaTarea(request, tarea_id):
     tarea = Tarea.objects.get(pk=tarea_id)
     if tarea_id:
         estatus = Estatus.objects.get(pk=3)
-        tarea.status = estatus
-        tarea.fechainicio = timezone.now()
+        tarea.estatus = estatus
+        tarea.fechafin = timezone.now()
         tarea.save()
     return redirect('index')
     
@@ -88,7 +89,7 @@ def cancelaTarea(request, tarea_id):
     tarea = Tarea.objects.get(pk=tarea_id)
     if tarea_id:
         estatus = Estatus.objects.get(pk=4)
-        tarea.status = estatus
+        tarea.estatus = estatus
         tarea.fechainicio = timezone.now()
         tarea.save()
     return redirect('index')
